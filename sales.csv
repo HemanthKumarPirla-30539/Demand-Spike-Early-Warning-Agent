@@ -1,0 +1,28 @@
+date,sku,sales,location
+2025-10-01,Espresso,80,Downtown
+2025-10-02,Espresso,82,Downtown
+2025-10-03,Espresso,78,Downtown
+2025-10-04,Espresso,81,Downtown
+2025-10-05,Espresso,79,Downtown
+2025-10-06,Espresso,83,Downtown
+2025-10-07,Espresso,80,Downtown
+2025-10-08,Espresso,85,Downtown
+2025-10-09,Espresso,84,Downtown
+2025-10-01,Cold Drink 250ml,50,Uptown
+2025-10-02,Cold Drink 250ml,55,Uptown
+2025-10-03,Cold Drink 250ml,52,Uptown
+2025-10-04,Cold Drink 250ml,49,Uptown
+2025-10-05,Cold Drink 250ml,51,Uptown
+2025-10-06,Cold Drink 250ml,53,Uptown
+2025-10-07,Cold Drink 250ml,50,Uptown
+2025-10-08,Cold Drink 250ml,92,Uptown
+2025-10-09,Cold Drink 250ml,95,Uptown
+2025-10-01,Croissant,60,Midtown
+2025-10-02,Croissant,62,Midtown
+2025-10-03,Croissant,61,Midtown
+2025-10-04,Croissant,59,Midtown
+2025-10-05,Croissant,63,Midtown
+2025-10-06,Croissant,60,Midtown
+2025-10-07,Croissant,61,Midtown
+2025-10-08,Croissant,64,Midtown
+2025-10-09,Croissant,62,Midtown

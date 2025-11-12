@@ -1,0 +1,9 @@
+# Python temp files
+*.pyc
+__pycache__/
+
+# Streamlit secrets file
+.streamlit/secrets.toml
+
+# VS Code settings
+.vscode/

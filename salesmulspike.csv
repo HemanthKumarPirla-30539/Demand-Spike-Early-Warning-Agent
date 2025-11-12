@@ -1,0 +1,28 @@
+date,sku,sales,location
+2025-10-01,Matcha Latte,30,Downtown
+2025-10-02,Matcha Latte,32,Downtown
+2025-10-03,Matcha Latte,29,Downtown
+2025-10-04,Matcha Latte,31,Downtown
+2025-10-05,Matcha Latte,33,Downtown
+2025-10-06,Matcha Latte,30,Downtown
+2025-10-07,Matcha Latte,35,Downtown
+2025-10-08,Matcha Latte,65,Downtown
+2025-10-09,Matcha Latte,72,Downtown
+2025-10-01,Muffin,80,Midtown
+2025-10-02,Muffin,82,Midtown
+2025-10-03,Muffin,78,Midtown
+2025-10-04,Muffin,81,Midtown
+2025-10-05,Muffin,79,Midtown
+2025-10-06,Muffin,83,Midtown
+2025-10-07,Muffin,80,Midtown
+2025-10-08,Muffin,115,Midtown
+2025-10-09,Muffin,120,Midtown
+2025-10-01,Espresso,50,Uptown
+2025-10-02,Espresso,55,Uptown
+2025-10-03,Espresso,52,Uptown
+2025-10-04,Espresso,49,Uptown
+2025-10-05,Espresso,51,Uptown
+2025-10-06,Espresso,53,Uptown
+2025-10-07,Espresso,50,Uptown
+2025-10-08,Espresso,24,Uptown
+2025-10-09,Espresso,28,Uptown
