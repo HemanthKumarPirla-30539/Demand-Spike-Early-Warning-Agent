@@ -5,7 +5,7 @@ COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8501
-EXPOSE 8000
+# Use the PORT environment variable assigned by Render
+ENV PORT 8501
 
-CMD ["streamlit", "run", "app_with_txt.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD streamlit run app_with_txt.py --server.port=$PORT --server.address=0.0.0.0
