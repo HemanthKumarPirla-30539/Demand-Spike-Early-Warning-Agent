@@ -62,7 +62,7 @@ except Exception as e:
 def send_email(recipient_email, subject, body):
     try:
         BREVO_API_KEY = os.getenv("BREVO_API_KEY")
-
+        st.write("Brevo Key Exists:", BREVO_API_KEY is not None)
         headers = {
             "accept": "application/json",
             "api-key": BREVO_API_KEY,
