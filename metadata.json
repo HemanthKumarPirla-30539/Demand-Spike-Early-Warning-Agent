@@ -1,0 +1,13 @@
+{
+  "name": "Autonomous Sales Velocity Agent (V5)",
+  "version": "5.0.0",
+  "description": "An AI agent built with Gemini and Streamlit. It analyzes sales data (from a CSV) to find significant spikes or slumps, understands unstructured human business context, builds a visual report with charts, and sends autonomous email alerts.",
+  "author": "gannavaramorisat",
+  "problem_statement_id": "24 - Demand Spike Early Warning Agent",
+  "tech_stack": [
+    "Python",
+    "Streamlit",
+    "Google Gemini API",
+    "Pandas"
+  ]
+}

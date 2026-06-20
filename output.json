@@ -1,0 +1,10 @@
+{
+  "comment": "This is a sample of the data our app sends to the AI. The 'prompt' is built by our app from these inputs.",
+  "inputs_from_user": {
+    "data_as_text": "date,sku,sales,location\n2025-10-01,Matcha Latte,30,Downtown\n2025-10-02,Matcha Latte,32,Downtown\n2025-10-03,Matcha Latte,29,Downtown\n2025-10-04,Matcha Latte,31,Downtown\n2025-10-05,Matcha Latte,33,Downtown\n2025-10-06,Matcha Latte,30,Downtown\n2025-10-07,Matcha Latte,35,Downtown\n2025-10-08,Matcha Latte,34,Downtown\n2025-10-09,Matcha Latte,36,Downtown\n2025-10-01,Muffin,80,Midtown\n2025-10-02,Muffin,82,Midtown\n2025-10-03,Muffin,78,Midtown\n2025-10-04,Muffin,81,Midtown\n2025-10-05,Muffin,79,Midtown\n2025-10-06,Muffin,83,Midtown\n2025-10-07,Muffin,80,Midtown\n2025-10-08,Muffin,85,Midtown\n2025-10-09,Muffin,84,Midtown\n2025-10-01,Espresso,50,Uptown\n2025-10-02,Espresso,55,Uptown\n2025-10-03,Espresso,52,Uptown\n2025-10-04,Espresso,49,Uptown\n2025-10-05,Espresso,51,Uptown\n2025-10-06,Espresso,53,Uptown\n2025-10-07,Espresso,50,Uptown\n2025-10-08,Espresso,20,Uptown\n2025-10-09,Espresso,18,Uptown",
+    "business_context": "Heard rumors of a new cafe opening in Uptown.",
+    "alert_threshold": 25,
+    "slump_threshold": 25,
+    "warn_on_slump": true
+  }
+}
