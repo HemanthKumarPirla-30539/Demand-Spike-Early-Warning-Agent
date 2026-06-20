@@ -83,11 +83,14 @@ def send_email(recipient_email, subject, body):
             json=payload
         )
 
+        st.write("Status Code:", response.status_code)
+        st.write("Response:", response.text)
+
         if response.status_code in [200, 201]:
             return True, "Email sent successfully!"
         else:
-            return False, f"Resend Error: {response.text}"
-
+             return False, f"Resend Error: {response.text}"
+   
     except Exception as e:
         return False, str(e)
 # --- END NEW FUNCTION ---
@@ -284,6 +287,8 @@ if uploaded_file is not None:
                                 )
                             if success:
                                 st.success(message)
+                            else:
+                                st.error(message)
                             # Errors are handled by the function
                         
                         else:
@@ -298,7 +303,8 @@ if uploaded_file is not None:
                                     )
                                 if success:
                                     st.success(message)
-                        
+                                else:
+                                    st.error(message)
                         # --- NEW: "VIBE CODE" REVEALER ---
                         st.markdown("---")
                         with st.expander("Click here to see the *exact* prompt sent to the AI (The 'Vibe Code')"):
