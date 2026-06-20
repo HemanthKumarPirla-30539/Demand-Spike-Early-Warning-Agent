@@ -8,9 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # --- IMPORTS for sending real email ---
-import smtplib
-import ssl
-from email.message import EmailMessage
+import requests
 # --- END NEW IMPORTS ---
 
 # --- Title for your App ---
@@ -65,31 +63,33 @@ except Exception as e:
 # --- FUNCTION: The Email Sender ---
 def send_email(recipient_email, subject, body):
     try:
-        SENDER_EMAIL =  os.getenv("SENDER_EMAIL")
-        SENDER_PASSWORD =  os.getenv("SENDER_PASSWORD")
-    except KeyError:
-        st.error("Email Send Error: 'SENDER_EMAIL' or 'SENDER_PASSWORD' not found in secrets.")
-        st.info("Please add your dummy email credentials to the .streamlit/secrets.toml file.")
-        return False, "Email credentials not configured in secrets."
+        RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 
-    try:
-        msg = EmailMessage()
-        msg.set_content(body)
-        msg['Subject'] = subject
-        msg['From'] = SENDER_EMAIL
-        msg['To'] = recipient_email
-        context = ssl.create_default_context()
-        with smtplib.SMTP("smtp.gmail.com", 587) as server: # Using Port 587
-            server.starttls(context=context) # Secure the connection
-            server.login(SENDER_EMAIL, SENDER_PASSWORD)
-            server.send_message(msg)
-        return True, "Email sent successfully!"
+        headers = {
+            "Authorization": f"Bearer {RESEND_API_KEY}",
+            "Content-Type": "application/json"
+        }
+
+        payload = {
+            "from": "onboarding@resend.dev",
+            "to": [recipient_email],
+            "subject": subject,
+            "html": f"<pre>{body}</pre>"
+        }
+
+        response = requests.post(
+            "https://api.resend.com/emails",
+            headers=headers,
+            json=payload
+        )
+
+        if response.status_code in [200, 201]:
+            return True, "Email sent successfully!"
+        else:
+            return False, f"Resend Error: {response.text}"
+
     except Exception as e:
-        if "Username and Password not accepted" in str(e):
-             st.error("Email Send Error: Your SENDER_EMAIL or SENDER_PASSWORD in secrets.toml is incorrect. Please check your 16-digit App Password.")
-             return False, "Email credentials failed."
-        st.error(f"Email Send Error: {e}")
-        return False, f"Email failed to send: {e}"
+        return False, str(e)
 # --- END NEW FUNCTION ---
 
 
