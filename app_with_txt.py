@@ -39,6 +39,7 @@ st.markdown("---")
 # --- SECURE: Get API Key from Streamlit Secrets ---
 try:
     API_KEY = os.getenv("GEMINI_API_KEY")
+    st.write("API Key Exists:", API_KEY is not None)
     
 except FileNotFoundError:
     st.error("CRITICAL ERROR: Could not find .streamlit/secrets.toml file.")
