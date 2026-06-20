@@ -37,8 +37,6 @@ st.markdown("---")
 # --- SECURE: Get API Key from Streamlit Secrets ---
 try:
     API_KEY = os.getenv("GEMINI_API_KEY")
-    st.write("API Key Loaded:", API_KEY is not None)
-    st.write("First 5 chars:", API_KEY[:5] if API_KEY else "None")
     
 except FileNotFoundError:
     st.error("CRITICAL ERROR: Could not find .streamlit/secrets.toml file.")
@@ -63,22 +61,30 @@ except Exception as e:
 # --- FUNCTION: The Email Sender ---
 def send_email(recipient_email, subject, body):
     try:
-        RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+        BREVO_API_KEY = os.getenv("BREVO_API_KEY")
 
         headers = {
-            "Authorization": f"Bearer {RESEND_API_KEY}",
-            "Content-Type": "application/json"
+            "accept": "application/json",
+            "api-key": BREVO_API_KEY,
+            "content-type": "application/json"
         }
 
         payload = {
-            "from": "onboarding@resend.dev",
-            "to": [recipient_email],
+            "sender": {
+                "name": "Hemanth",
+                "email": "hemanthkumaryadav260@gmail.com"
+            },
+            "to": [
+                {
+                    "email": recipient_email
+                }
+            ],
             "subject": subject,
-            "html": f"<pre>{body}</pre>"
+            "htmlContent": f"<pre>{body}</pre>"
         }
 
         response = requests.post(
-            "https://api.resend.com/emails",
+            "https://api.brevo.com/v3/smtp/email",
             headers=headers,
             json=payload
         )
@@ -89,8 +95,8 @@ def send_email(recipient_email, subject, body):
         if response.status_code in [200, 201]:
             return True, "Email sent successfully!"
         else:
-             return False, f"Resend Error: {response.text}"
-   
+            return False, f"Brevo Error: {response.text}"
+
     except Exception as e:
         return False, str(e)
 # --- END NEW FUNCTION ---
