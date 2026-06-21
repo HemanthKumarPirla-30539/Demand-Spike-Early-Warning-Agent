@@ -325,7 +325,8 @@ if uploaded_file is not None:
                         st.text(f"Raw AI response: {response.text}")
 
                 except Exception as e:
-                    st.error(f"An error occurred during analysis: {e}")
-
+                     st.error("Unable to connect with Gemini API. Please try again later.")
+                     with st.expander("Technical Details"):
+                         st.code(str(e))
     except Exception as e:
         st.error(f"Error reading CSV file: {e}")
